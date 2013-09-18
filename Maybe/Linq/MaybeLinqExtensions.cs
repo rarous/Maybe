@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace System.Maybe.Linq
+﻿namespace System.Maybe.Linq
 {
     public static class MaybeLinqExtensions
     {

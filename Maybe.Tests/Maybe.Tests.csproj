@@ -42,6 +42,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataMaybeSpec.cs" />
     <Compile Include="LinqSpec.cs" />
     <Compile Include="MaybeSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

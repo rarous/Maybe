@@ -36,6 +36,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataMaybe.cs" />
     <Compile Include="Linq\MaybeLinqExtensions.cs" />
     <Compile Include="Maybe.cs" />
     <Compile Include="Factories.cs" />
