@@ -46,5 +46,17 @@ namespace Maybe.Tests
             var something = 1.ToMaybe();
             Assert.Equal("1", something.Bind(x => x.ToString().ToMaybe()).Return());
         }
+
+        [Fact]
+        public void NothingToStringShouldReturnNothing()
+        {
+            Assert.Equal("Nothing", new Nothing<string>().ToString());
+        }
+
+        [Fact]
+        public void JustToStringShouldReturnStringOfTheValue()
+        {
+            Assert.Equal("1", 1.ToMaybe().ToString());
+        }
     }
 }

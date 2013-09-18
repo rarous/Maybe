@@ -11,5 +11,10 @@ namespace System
         {
             return default(T);
         }
+
+        public override string ToString()
+        {
+            return "Nothing";
+        }
     }
 }

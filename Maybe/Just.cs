@@ -18,5 +18,10 @@ namespace System
         {
             return a;
         }
+
+        public override string ToString()
+        {
+            return a.ToString();
+        }
     }
 }
