@@ -24,9 +24,7 @@ namespace System
 
         public static bool IsJust<T>(Maybe<T> a)
         {
-            if (a is Nothing<T>)
-                return false;
-            return true;
+            return a is Just<T>;
         }
 
         public static bool IsNothing<T>(Maybe<T> a)
