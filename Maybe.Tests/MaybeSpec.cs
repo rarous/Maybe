@@ -58,5 +58,78 @@ namespace Maybe.Tests
         {
             Assert.Equal("1", 1.ToMaybe().ToString());
         }
+
+        [Fact]
+        public void NothingShouldNotEqualToNull()
+        {
+            Assert.NotEqual(new Nothing<int>(), null);
+        }
+
+        [Fact]
+        public void NothingShouldEqualToNothing()
+        {
+            Assert.Equal(new Nothing<int>(), new Nothing<int>());
+        }
+
+        [Fact]
+        public void JustShouldNotEqualToNull()
+        {
+            Assert.NotEqual(new Just<int>(1), null);
+        }
+
+        [Fact]
+        public void JustShoudlEqualJustWhenValuesAreEqual()
+        {
+            Assert.Equal(new Just<int>(1), new Just<int>(1));
+        }
+
+        [Fact]
+        public void JustShouldNotEqualJustWhenValuesAreNotEqual()
+        {
+            Assert.NotEqual(new Just<int>(1), new Just<int>(2));
+        }
+
+        [Fact]
+        public void JustShouldEqualJustWhenValueReferencesAreSame()
+        {
+            var x = "test";
+            Assert.Equal(new Just<string>(x), new Just<string>(x));
+        }
+
+        [Fact]
+        public void JustShouldNotEqualToNothing()
+        {
+            Assert.NotEqual(1.ToMaybe(), new Nothing<int>());
+        }
+
+        [Fact]
+        public void SameMaybeValuesShouldBeEqual()
+        {
+            Assert.Equal(1.ToMaybe(), 1.ToMaybe());
+        }
+
+        [Fact]
+        public void MaybeEqualityOperatorShouldReturnTrueForSameMaybes()
+        {
+            Assert.True(1.ToMaybe() == 1.ToMaybe());
+        }
+
+        [Fact]
+        public void MaybeEqualityOperatorShouldReturnTrueForJustSameMaybes()
+        {
+            Assert.True(1.ToMaybe() == new Just<int>(1));
+        }
+
+        [Fact]
+        public void MaybeInequalityOperatorShouldReturnTrueForDifferentMaybes()
+        {
+            Assert.True(1.ToMaybe() != 2.ToMaybe());
+        }
+
+        [Fact]
+        public void NohingOfSameTypeShouldEqual()
+        {
+            Assert.True(new Nothing<int>() == new Nothing<int>());
+        }
     }
 }
