@@ -131,5 +131,19 @@ namespace Maybe.Tests
         {
             Assert.True(new Nothing<int>() == new Nothing<int>());
         }
+
+        [Fact]
+        public void NullableToMaybeShouldReturnMaybeOfUnderlingType()
+        {
+            var x = default(int?);
+            Assert.IsAssignableFrom<Maybe<int>>(x.ToMaybe());
+        }
+
+        [Fact]
+        public void NullableWithValueToMaybeShouldReturnJustValue()
+        {
+            int? x = 0;
+            Assert.Equal(0.ToMaybe(), x.ToMaybe());
+        }
     }
 }

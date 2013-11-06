@@ -12,6 +12,13 @@ namespace System
             return new Just<T>(a);
         }
 
+        public static Maybe<T> ToMaybe<T>(this T? a) where T : struct
+        {
+            if (a == null)
+                return new Nothing<T>();
+            return a.Value.ToMaybe();
+        }
+
         public static Maybe<T> ToMaybe<T>(this IEnumerable<T> col)
         {
             if (col != null && col.Any())
