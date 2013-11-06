@@ -19,6 +19,11 @@ namespace System
             return a.Value.ToMaybe();
         }
 
+        public static Maybe<T> ToMaybe<T>(this Maybe<T> a)
+        {
+            return a ?? new Nothing<T>();
+        }
+
         public static Maybe<T> ToMaybe<T>(this IEnumerable<T> col)
         {
             if (col != null && col.Any())

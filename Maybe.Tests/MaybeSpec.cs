@@ -145,5 +145,19 @@ namespace Maybe.Tests
             int? x = 0;
             Assert.Equal(0.ToMaybe(), x.ToMaybe());
         }
+
+        [Fact]
+        public void MaybeToMaybeShouldBeMaybe()
+        {
+            var x = 0.ToMaybe();
+            Assert.IsAssignableFrom<Maybe<int>>(x.ToMaybe());
+        }
+
+        [Fact]
+        public void NullMaybeToMaybeShouldBeNothing()
+        {
+            Maybe<int> x = null;
+            Assert.IsType<Nothing<int>>(x.ToMaybe());
+        }
     }
 }
