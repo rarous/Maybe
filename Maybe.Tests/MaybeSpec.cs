@@ -133,7 +133,7 @@ namespace Maybe.Tests
         }
 
         [Fact]
-        public void NullableToMaybeShouldReturnMaybeOfUnderlingType()
+        public void NullableToMaybeShouldReturnMaybeOfUnderlyingType()
         {
             var x = default(int?);
             Assert.IsAssignableFrom<Maybe<int>>(x.ToMaybe());
