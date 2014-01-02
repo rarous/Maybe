@@ -45,6 +45,7 @@
     <Compile Include="DataMaybeSpec.cs" />
     <Compile Include="LinqSpec.cs" />
     <Compile Include="MaybeSpec.cs" />
+    <Compile Include="ParsersSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
