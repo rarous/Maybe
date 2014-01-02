@@ -13,7 +13,7 @@
 
         public static bool operator ==(Maybe<T> a, Maybe<T> b)
         {
-            if (System.Object.ReferenceEquals(a, b))
+            if (Object.ReferenceEquals(a, b))
                 return true;
 
             if (((object)a == null) || ((object)b == null))
